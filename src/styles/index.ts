@@ -6,8 +6,10 @@ export const HomeWrapper = styled.div`
   height: 100%;
   width: 100%;
   position: relative;
-
-  @media (max-width: 800px) {
+  padding: 40px;
+  gap: 20px;
+  min-width: 500px;
+  @media (max-width: 860px) {
     flex-direction: column;
     overflow: scroll;
   }

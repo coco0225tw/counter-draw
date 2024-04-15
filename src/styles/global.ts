@@ -13,5 +13,7 @@ html,body{
 *{
     box-sizing: border-box;
     border: solid 1px black;
+    font-size: 24px;
+    color: #222222;
 }
 `;
