@@ -1,9 +1,11 @@
 import { CountDownTimerWrapper, Colon } from './style';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
-import { tickTimer, clearTimer } from '../../../redux/feature/timer/timerSlice';
+import { tickTimer, clearTimer } from '@/redux/feature/timer/timerSlice';
+import { drawWinner } from '@/redux/feature/participant/participantSlice';
 import { RootState } from '@/redux/store';
 import { formatTimer } from '@/utils/formatTimer';
+
 export function CountDownTimer() {
   const dispatch = useDispatch();
   const { leftTime, isRunning } = useSelector((state: RootState) => state.timer);
@@ -21,10 +23,12 @@ export function CountDownTimer() {
 
   useEffect(() => {
     setTimeLeft(formatTimer(leftTime));
+
     if (intervalRef.current && leftTime === 0) {
-      dispatch(clearTimer());
       clearInterval(intervalRef.current);
-      console.log('pick');
+      dispatch(clearTimer());
+      dispatch(drawWinner());
+      //route to result todo
     }
   }, [leftTime]);
 
