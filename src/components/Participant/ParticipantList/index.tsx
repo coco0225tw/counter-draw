@@ -31,7 +31,6 @@ export function ParticipantList() {
     const getNames = () => {
       fetch('data/names.json')
         .then((response) => {
-          console.log('fetch');
           return response.json();
         })
         .then((data) => {
