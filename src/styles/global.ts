@@ -9,10 +9,12 @@ html,body{
 #__next{
     width: 100%;
     height: 100%;
+    position: fixed;
+    overflow: scroll;
 }
 *{
     box-sizing: border-box;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     font-size: 24px;
     color: #222222;
 }

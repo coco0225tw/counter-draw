@@ -7,4 +7,5 @@ export const ParticipantItemListWrapper = styled.div`
   padding: 20px;
   gap: 20px;
   overflow: scroll;
+  border: solid 1px #dddddd;
 `;

@@ -9,8 +9,12 @@ export const HomeWrapper = styled.div`
   padding: 40px;
   gap: 20px;
   min-width: 500px;
+
   @media (max-width: 860px) {
     flex-direction: column;
-    overflow: scroll;
+    padding-bottom: 0;
+    > :last-child {
+      padding-bottom: 40px;
+    }
   }
 `;
