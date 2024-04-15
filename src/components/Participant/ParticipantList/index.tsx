@@ -24,8 +24,6 @@ export function ParticipantList() {
 
       for (let i = 0; i < sizes; i++) {
         let id = getRandomNumber(0, data.length);
-        console.log('data.length=>', data.length);
-        console.log(id);
         const newItem: Participant = { name: data[id], id: i };
         result.push(newItem);
         data.splice(id, 1);

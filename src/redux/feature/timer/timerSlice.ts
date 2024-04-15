@@ -13,7 +13,7 @@ const timerSlice = createSlice({
     },
     startTimer: (state, action: PayloadAction<number>) => {
       state.isRunning = true;
-      state.leftTime = 2;
+      state.leftTime = action.payload;
     },
     clearTimer: (state) => {
       state.isRunning = false;

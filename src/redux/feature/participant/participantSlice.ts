@@ -11,9 +11,8 @@ const participantSlice = createSlice({
   reducers: {
     drawWinner: (state) => {
       const winnerIndex = getRandomNumber(0, state.participants.length);
-      const winnerId = state.participants.findIndex((participant: Participant) => participant.id === winnerIndex);
       state.winner = state.participants[winnerIndex].name;
-      state.participants = state.participants.filter((participant: Participant) => participant.id !== winnerId);
+      state.participants = state.participants.filter((_, index) => index !== winnerIndex);
     },
     initiateList: (state, action: PayloadAction<Participant[]>) => {
       state.participants = action.payload;
