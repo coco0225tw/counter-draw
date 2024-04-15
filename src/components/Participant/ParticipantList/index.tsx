@@ -4,10 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { initiateList } from '@/redux/feature/participant/participantSlice';
 
 import { RootState } from '@/redux/store';
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import { getRandomNumber } from '@/utils/randomNumber';
 import { Participant } from '@/redux/feature/participant/types';
-let isInit = false;
 //todo custom hook
 //todo rwd
 export function ParticipantList() {
@@ -18,13 +17,18 @@ export function ParticipantList() {
   //todo check
 
   useEffect(() => {
+    let isInit = false; //todo check
+
     const generateList = (data: string[], sizes: number) => {
       const result: Participant[] = [];
-      for (let i = sizes; i--; i > 0) {
+
+      for (let i = 0; i < sizes; i++) {
         let id = getRandomNumber(0, data.length);
+        console.log('data.length=>', data.length);
+        console.log(id);
         const newItem: Participant = { name: data[id], id: i };
         result.push(newItem);
-        data.filter((_, index) => index !== i);
+        data.splice(id, 1);
       }
       return result;
     };
@@ -41,15 +45,18 @@ export function ParticipantList() {
         })
         .catch((err) => alert(err));
     };
-    if (list.length === 0 && !isInit) {
+    if (list.length === 0) {
       getNames();
     }
+    // return () => {
+    //   isInit = true;
+    // };
   }, [list]);
 
   return (
     <ParticipantItemListWrapper>
-      {list.map((participant: Participant, index) => {
-        return <ParticipantItem key={index} name={participant.name} />;
+      {list.map((participant: Participant) => {
+        return <ParticipantItem key={participant.id} name={participant.name} />;
       })}
     </ParticipantItemListWrapper>
   );

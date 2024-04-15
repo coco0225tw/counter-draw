@@ -1,6 +1,6 @@
 import { CountDownSetterWrapper } from './style';
 import { useSelector, useDispatch } from 'react-redux';
-import { startTimer } from '../../../redux/feature/timer/timerSlice';
+import { startTimer } from '@/redux/feature/timer/timerSlice';
 import { RootState } from '@/redux/store';
 import React, { useRef } from 'react';
 export function CountDownSetter() {

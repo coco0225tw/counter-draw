@@ -5,9 +5,10 @@ import { tickTimer, clearTimer } from '@/redux/feature/timer/timerSlice';
 import { drawWinner } from '@/redux/feature/participant/participantSlice';
 import { RootState } from '@/redux/store';
 import { formatTimer } from '@/utils/formatTimer';
-
+import { useRouter } from 'next/router';
 export function CountDownTimer() {
   const dispatch = useDispatch();
+  const router = useRouter();
   const { leftTime, isRunning } = useSelector((state: RootState) => state.timer);
   const intervalRef = useRef<NodeJS.Timeout>();
   const leftSeconds = leftTime * 60;
@@ -28,7 +29,7 @@ export function CountDownTimer() {
       clearInterval(intervalRef.current);
       dispatch(clearTimer());
       dispatch(drawWinner());
-      //route to result todo
+      router.push('/result');
     }
   }, [leftTime]);
 
