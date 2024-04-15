@@ -1,6 +1,6 @@
 import { ParticipantItemWrapper } from './style';
 import Image from 'next/image';
-import profileImg from '../../../public/profile.png';
+import profileImg from '../../../../public/profile.png';
 export function ParticipantItem({ name }: { name: string }) {
   return (
     <ParticipantItemWrapper>

@@ -16,5 +16,6 @@ export const CountDownSetterWrapper = styled.div`
     border-radius: 4px;
     margin-left: 60px;
     font-weight: lighter;
+    cursor: pointer;
   }
 `;
