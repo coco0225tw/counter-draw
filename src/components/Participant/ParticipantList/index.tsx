@@ -15,6 +15,7 @@ export function ParticipantList() {
   const minListSize = 10;
   const maxListSize = 20;
   //todo check
+  //todo test?
 
   useEffect(() => {
     let isInit = false; //todo check
