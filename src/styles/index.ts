@@ -6,7 +6,7 @@ export const HomeWrapper = styled.div`
   height: 100%;
   width: 100%;
   position: relative;
-  padding: 40px;
+  padding: 16px;
   gap: 20px;
   min-width: 360px;
   transition-property: padding;
@@ -21,7 +21,7 @@ export const HomeWrapper = styled.div`
     flex-direction: column;
     padding-bottom: 0;
     > :last-child {
-      padding-bottom: 40px;
+      padding-bottom: 16px;
     }
   }
 `;

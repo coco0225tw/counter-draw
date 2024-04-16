@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 export const CountDownTimerWrapper = styled.div`
-  font-size: 160px;
+  font-size: 156px;
   text-align: center;
   display: flex;
   color: #099396;
   position: relative;
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     font-size: 120px;
   }
 `;
@@ -24,7 +24,7 @@ export const Colon = styled.div`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    @media (max-width: 500px) {
+    @media (max-width: 768px) {
       width: 10px;
       height: 10px;
     }
