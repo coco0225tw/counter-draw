@@ -8,7 +8,6 @@ import { useEffect } from 'react';
 import { getRandomNumber } from '@/utils/randomNumber';
 import { Participant } from '@/redux/feature/participant/types';
 //todo custom hook
-//todo rwd
 export function ParticipantList() {
   const dispatch = useDispatch();
   const list = useSelector((state: RootState) => state.participant.participants);

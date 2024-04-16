@@ -5,7 +5,7 @@ export const ResultWrapper = styled.div`
   align-items: center;
   padding: 40px;
   height: 100%;
-  min-width: 500px;
+  min-width: 360px;
   .title {
     font-weight: bold;
     font-size: 40px;
@@ -13,12 +13,13 @@ export const ResultWrapper = styled.div`
   .profile {
     margin-top: 20px;
     transform-origin: top;
-    transition: transform 300ms ease-in-out;
+    transition-property: transform;
+
     border: solid 1px #dddddd;
-    @media (max-width: 840px) and (min-width: 700px) {
+    @media (max-width: 840px) and (min-width: 769px) {
       transform: scale(0.8);
     }
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
       width: 100%;
     }
   }
@@ -29,7 +30,7 @@ export const ResultWrapper = styled.div`
     align-items: center;
     justify-content: center;
     background-color: #886c60;
-    @media (max-width: 700px) {
+    @media (max-width: 768px) {
       width: 100%;
     }
   }

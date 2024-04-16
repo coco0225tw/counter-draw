@@ -14,8 +14,9 @@ html,body{
 }
 *{
     box-sizing: border-box;
-    /* border: solid 1px black; */
     font-size: 24px;
     color: #222222;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
 }
 `;

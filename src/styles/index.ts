@@ -8,9 +8,16 @@ export const HomeWrapper = styled.div`
   position: relative;
   padding: 40px;
   gap: 20px;
-  min-width: 500px;
+  min-width: 360px;
+  transition-property: padding;
 
-  @media (max-width: 860px) {
+  @media (min-width: 1351px) {
+    padding: 80px 300px;
+  }
+  @media (max-width: 1350px) and (min-width: 1200px) {
+    padding: 80px 120px;
+  }
+  @media (max-width: 768px) {
     flex-direction: column;
     padding-bottom: 0;
     > :last-child {
