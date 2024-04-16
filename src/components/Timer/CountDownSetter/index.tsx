@@ -9,7 +9,9 @@ export function CountDownSetter() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const handleNotNumberKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    ['e', 'E', '+', '-', '.'].includes(e.key) && e.preventDefault(); //todo 0
+    const inputValue = inputRef?.current?.value;
+    const firstIsZero = inputValue?.length === 0 && e.key == '0';
+    if (['e', 'E', '+', '-', '.'].includes(e.key) || firstIsZero) e.preventDefault();
   };
 
   const startTimerHandler = () => {
