@@ -33,7 +33,7 @@ export function TimerSetter() {
         id="minuteInput"
         type="number"
         min="1"
-        step="1" //todp
+        step="1"
         readOnly={isRunning}
         ref={inputRef}
       />

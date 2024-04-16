@@ -7,7 +7,7 @@ import { RootState } from '@/redux/store';
 import { useEffect } from 'react';
 import { getRandomNumber } from '@/utils/randomNumber';
 import { Participant } from '@/redux/feature/participant/types';
-//todo custom hook
+
 export function ParticipantList() {
   const dispatch = useDispatch();
   const list = useSelector((state: RootState) => state.participant.participants);
