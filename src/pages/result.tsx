@@ -5,7 +5,7 @@ import { clearWinner } from '@/redux/feature/participant/participantSlice';
 
 import { ResultWrapper } from '@/styles/result';
 import Image from 'next/image';
-import Profile from '../../public/result_profile.png';
+import Profile from '../../public//images/result_profile.png';
 import { useEffect } from 'react';
 export default function Result() {
   const winner = useSelector((state: RootState) => state.participant.winner);
