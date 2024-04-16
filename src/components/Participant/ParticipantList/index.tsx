@@ -17,7 +17,7 @@ export function ParticipantList() {
   //todo test?
 
   useEffect(() => {
-    let isInit = false; //todo check
+    let ignore = false;
 
     const generateList = (data: string[], sizes: number) => {
       const result: Participant[] = [];
@@ -36,19 +36,20 @@ export function ParticipantList() {
           return response.json();
         })
         .then((data) => {
+          if (ignore) return;
           const listSize = getRandomNumber(minListSize, maxListSize + 1);
           const result = generateList(data.names, listSize);
           dispatch(initiateList(result));
-          isInit = true;
         })
         .catch((err) => alert(err));
     };
+
     if (list.length === 0) {
       getNames();
     }
-    // return () => {
-    //   isInit = true;
-    // };
+    return () => {
+      ignore = true;
+    };
   }, [list]);
 
   return (
