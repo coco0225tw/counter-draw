@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { CountDownState } from './types';
-const initialState: CountDownState = {
+import { TimerState } from './types';
+const initialState: TimerState = {
   leftTime: 0,
   isRunning: false,
 };
 const timerSlice = createSlice({
-  name: 'countDown',
+  name: 'timer',
   initialState: initialState,
   reducers: {
     tickTimer: (state) => {

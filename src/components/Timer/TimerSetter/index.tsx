@@ -1,9 +1,9 @@
-import { CountDownSetterWrapper } from './style';
+import { TimerSetterWrapper } from './style';
 import { useSelector, useDispatch } from 'react-redux';
 import { startTimer } from '@/redux/feature/timer/timerSlice';
 import { RootState } from '@/redux/store';
 import React, { useRef } from 'react';
-export function CountDownSetter() {
+export function TimerSetter() {
   const dispatch = useDispatch();
   const { isRunning } = useSelector((state: RootState) => state.timer);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -27,7 +27,7 @@ export function CountDownSetter() {
   };
 
   return (
-    <CountDownSetterWrapper>
+    <TimerSetterWrapper>
       <input
         onKeyDown={(e) => handleKey(e)}
         id="minuteInput"
@@ -41,6 +41,6 @@ export function CountDownSetter() {
       <div className="button" onClick={startTimerHandler}>
         設定
       </div>
-    </CountDownSetterWrapper>
+    </TimerSetterWrapper>
   );
 }

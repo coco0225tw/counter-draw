@@ -1,4 +1,4 @@
-import { CountDownTimerWrapper, Colon } from './style';
+import { TimerWrapper, Colon } from './style';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useRef, useState } from 'react';
 import { tickTimer, clearTimer } from '@/redux/feature/timer/timerSlice';
@@ -6,7 +6,7 @@ import { drawWinner } from '@/redux/feature/participant/participantSlice';
 import { RootState } from '@/redux/store';
 import { formatTimer } from '@/utils/formatTimer';
 import { useRouter } from 'next/router';
-export function CountDownTimer() {
+export function TimerCounter() {
   const dispatch = useDispatch();
   const router = useRouter();
   const { leftTime, isRunning } = useSelector((state: RootState) => state.timer);
@@ -34,10 +34,10 @@ export function CountDownTimer() {
   }, [leftTime]);
 
   return (
-    <CountDownTimerWrapper>
+    <TimerWrapper>
       {timeLeft.minute}
       <Colon />
       {timeLeft.second}
-    </CountDownTimerWrapper>
+    </TimerWrapper>
   );
 }

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-export const CountDownTimerWrapper = styled.div`
+export const TimerWrapper = styled.div`
   font-size: 156px;
   text-align: center;
   display: flex;

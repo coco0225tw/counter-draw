@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-export const CountDownSetterWrapper = styled.div`
+export const TimerSetterWrapper = styled.div`
   display: flex;
   align-items: center;
   #minuteInput {

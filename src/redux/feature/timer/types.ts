@@ -1,4 +1,4 @@
-export interface CountDownState {
+export interface TimerState {
   leftTime: number;
   isRunning: boolean;
 }
