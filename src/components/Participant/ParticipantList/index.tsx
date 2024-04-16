@@ -13,8 +13,6 @@ export function ParticipantList() {
   const list = useSelector((state: RootState) => state.participant.participants);
   const minListSize = 10;
   const maxListSize = 20;
-  //todo check
-  //todo test?
 
   useEffect(() => {
     let ignore = false;

@@ -8,9 +8,15 @@ export function CountDownSetter() {
   const { isRunning } = useSelector((state: RootState) => state.timer);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleNotNumberKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const inputValue = inputRef?.current?.value;
-    const firstIsZero = inputValue?.length === 0 && e.key == '0';
+    const inputLength = inputValue?.length;
+    const firstIsZero = inputLength === 0 && e.key == '0';
+    const lengthIsThree = inputLength === 3;
+    if (lengthIsThree) {
+      e.preventDefault();
+      alert('最長3位數!');
+    }
     if (['e', 'E', '+', '-', '.'].includes(e.key) || firstIsZero) e.preventDefault();
   };
 
@@ -23,7 +29,7 @@ export function CountDownSetter() {
   return (
     <CountDownSetterWrapper>
       <input
-        onKeyDown={(e) => handleNotNumberKey(e)}
+        onKeyDown={(e) => handleKey(e)}
         id="minuteInput"
         type="number"
         min="1"

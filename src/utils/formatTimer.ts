@@ -1,6 +1,6 @@
 export function formatTimer(seconds: number) {
   let timeLeft = {
-    minute: '000',
+    minute: '00',
     second: '00',
   };
   if (seconds > 0) {
